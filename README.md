@@ -18,3 +18,6 @@ Mariam Mato - L2 GLSI - ESP/UCAD
 
 ## Cours
 Integration de Modeles IA - Dr. El Hadji Bassirou TOURE
+
+## Exercice 1
+Analyse des patients par sexe et diagnostic ajoutee.
