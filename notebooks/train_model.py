@@ -86,3 +86,42 @@ print(f"Probabilité : {proba_max:.1%}")
 for classe, proba in zip(model_loaded.classes_, probas):
     bar = '#' * int(proba * 30)
     print(f"  {classe:8s} : {proba:.1%} {bar}")
+    # ==============================
+# EXERCICE 1 - Importance des features
+# ==============================
+print("\n--- Exercice 1 : Importance des features ---")
+importances = model.feature_importances_
+for name, imp in sorted(zip(feature_cols, importances),
+                        key=lambda x: x[1], reverse=True):
+    print(f"  {name:20s} : {imp:.3f}")
+    # ==============================
+# EXERCICE 2 - 3 patients fictifs
+# ==============================
+print("\n--- Exercice 2 : Test de 3 patients fictifs ---")
+
+patients_test = [
+    {'age': 8,  'sexe': 'M', 'temperature': 36.8,
+     'tension_sys': 95, 'toux': False,
+     'fatigue': False, 'maux_tete': False, 'region': 'Dakar'},
+    {'age': 45, 'sexe': 'F', 'temperature': 40.2,
+     'tension_sys': 130, 'toux': True,
+     'fatigue': True, 'maux_tete': True, 'region': 'Thies'},
+    {'age': 68, 'sexe': 'M', 'temperature': 38.0,
+     'tension_sys': 150, 'toux': True,
+     'fatigue': True, 'maux_tete': False, 'region': 'Kaolack'},
+]
+descriptions = [
+    "Enfant 8 ans, sans symptomes",
+    "Adulte 45 ans, forte fievre + symptomes",
+    "Patient 68 ans, toux + fatigue",
+]
+for i, (p, desc) in enumerate(zip(patients_test, descriptions)):
+    s_enc = le_sexe.transform([p['sexe']])[0]
+    r_enc = le_region.transform([p['region']])[0]
+    feat = [p['age'], s_enc, p['temperature'],
+            p['tension_sys'], int(p['toux']),
+            int(p['fatigue']), int(p['maux_tete']), r_enc]
+    diag = model.predict([feat])[0]
+    proba = model.predict_proba([feat])[0].max()
+    print(f"\nPatient {i+1} : {desc}")
+    print(f"  Diagnostic : {diag} ({proba:.1%})")
