@@ -2,6 +2,10 @@ import pandas as pd
 import numpy as np
 
 np.random.seed(42)
+<<<<<<< HEAD
+=======
+n = 500
+>>>>>>> 3522391ad36339858527df71cded5b48b484c03c
 regions = ['Dakar','Thies','Saint-Louis','Ziguinchor','Kaolack',
            'Tambacounda','Diourbel','Fatick','Kolda','Louga']
 
@@ -33,12 +37,19 @@ for i, diag in enumerate(diagnostics):
         maux_tete = False
     tension = np.random.randint(90, 160)
     region = np.random.choice(regions)
+<<<<<<< HEAD
     rows.append([age, sexe, temp, tension, toux, fatigue,
                  maux_tete, region, diag])
 
 df = pd.DataFrame(rows, columns=['age','sexe','temperature','tension_sys',
                                   'toux','fatigue','maux_tete',
                                   'region','diagnostic'])
+=======
+    rows.append([age, sexe, temp, tension, toux, fatigue, maux_tete, region, diag])
+
+df = pd.DataFrame(rows, columns=['age','sexe','temperature','tension_sys',
+                                  'toux','fatigue','maux_tete','region','diagnostic'])
+>>>>>>> 3522391ad36339858527df71cded5b48b484c03c
 df = df.sample(frac=1, random_state=42).reset_index(drop=True)
 df.to_csv('data/patients_dakar.csv', index=False)
 print(f"Dataset créé : {df.shape}")
