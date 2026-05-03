@@ -1,18 +1,42 @@
 contourpy==1.3.3
 cycler==0.12.1
 fonttools==4.62.1
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3522391ad36339858527df71cded5b48b484c03c
 joblib==1.5.3
 kiwisolver==1.5.0
 matplotlib==3.10.9
 numpy==2.4.4
 packaging==26.2
+<<<<<<< HEAD
+=======
+=======
+kiwisolver==1.5.0
+matplotlib==3.10.8
+numpy==2.4.4
+packaging==26.0
+>>>>>>> 66669de43a42ec2d838d7cd60f7b8a625b870479
+>>>>>>> 3522391ad36339858527df71cded5b48b484c03c
 pandas==3.0.2
 pillow==12.2.0
 pyparsing==3.3.2
 python-dateutil==2.9.0.post0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3522391ad36339858527df71cded5b48b484c03c
 scikit-learn==1.8.0
 scipy==1.17.1
 seaborn==0.13.2
 six==1.17.0
 threadpoolctl==3.6.0
 tzdata==2026.2
+<<<<<<< HEAD
+=======
+=======
+six==1.17.0
+tzdata==2026.1
+>>>>>>> 66669de43a42ec2d838d7cd60f7b8a625b870479
+>>>>>>> 3522391ad36339858527df71cded5b48b484c03c
