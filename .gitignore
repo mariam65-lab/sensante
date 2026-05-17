@@ -11,6 +11,12 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+<<<<<<< HEAD
 # Fichiers temporaires matplotlib
 *. png
 ! figures /*. png
+=======
+# Cles API - NE JAMAIDS COMMITER
+.env
+
+>>>>>>> d1fe60b (Lab 5: Integration LLM groq + explain v4)
