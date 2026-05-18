@@ -14,7 +14,7 @@ grippe, typhoide) a partir des symptomes du patient.
 - `notebooks/` : Scripts d'exploration
 
 ## Auteur
-Gnagna Faly Signate - L2 GLSI-B - ESP/UCAD
+Mariam Mato Touraki - L2 GLSI-A - ESP/UCAD
 
 ## Cours
 Integration de Modeles IA - Dr. El Hadji Bassirou TOURE 
