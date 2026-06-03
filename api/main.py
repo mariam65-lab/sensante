@@ -1,6 +1,8 @@
 # api/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 import joblib
 import numpy as np
@@ -135,7 +137,6 @@ Ne fais JAMAIS de diagnostic toi-meme."""
 
 @app.post("/explain", response_model=ExplainOutput)
 def explain(data: ExplainInput):
-    """Expliquer un diagnostic en francais avec un LLM."""
     if not groq_client:
         return ExplainOutput(
             explication="Service d'explication indisponible. Cle API non configuree.",
@@ -166,3 +167,11 @@ def explain(data: ExplainInput):
         explication = f"Erreur lors de l'appel au LLM : {str(e)}"
 
     return ExplainOutput(explication=explication)
+
+# Servir le frontend comme fichier statique
+app.mount("/static", StaticFiles(directory="frontend"), name="static")
+
+@app.get("/")
+def serve_frontend():
+    """Servir la page d'accueil."""
+    return FileResponse("frontend/index.html")
